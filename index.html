@@ -240,25 +240,25 @@
       </div>
     </div>
   </section>
+
+  <script>
+      var $form = $('form#form-action'), 
+      url = 'https://script.google.com/macros/s/AKfycbwv58evNmgQm6DaOF2OX_LSmJzM55L_QqwvXxWzwleCTR92UUs/exec'
+      
+      $('#submit-form').on('click', function(e) {
+        e.preventDefault();
+        var jqxhr = $.ajax({
+          url: url,
+          method: "GET",
+          dataType: "json",
+          data: $form.serializeObject()
+        }).success(
+        // do something
+        );
+      })
+    </script> 
   
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
-  
-  <script>
-    var $form = $('form#form-action'), 
-    url = 'https://script.google.com/macros/s/AKfycbwv58evNmgQm6DaOF2OX_LSmJzM55L_QqwvXxWzwleCTR92UUs/exec'
-    
-    $('#submit-form').on('click', function(e) {
-      e.preventDefault();
-      var jqxhr = $.ajax({
-        url: url,
-        method: "GET",
-        dataType: "json",
-        data: $form.serializeObject()
-      }).success(
-      // do something
-      );
-    })
-  </script> 
   
 </body>
 </html>
