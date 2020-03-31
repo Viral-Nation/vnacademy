@@ -246,6 +246,11 @@
   <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
   
   <script>
+    function reload() {
+      alert("Your form was submitted!"); 
+      window.location.reload();
+    }
+    
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwq-KRpgyEHltYRUWzSVakOVfvrnbwtyydS8QWsrZ6ciDFbmVzR/exec' 
     const form = document.forms['submit-to-google-sheet']
     
@@ -253,13 +258,8 @@
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
       .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message))
+      .catch(error => console.error('Error!', error.message)) 
     })
-    
-    function reload() {
-      alert("Your form was submitted!"); 
-      window.location.reload();
-    }
   </script>
   
 </body>
