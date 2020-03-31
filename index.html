@@ -234,7 +234,7 @@
           <br>
           <br>
           <div class="text-align" id="submit-btn">
-            <button id="submit-form" type="submit" class="button is-black">SUBMIT</button> 
+            <button onclick="reload()" type="submit" class="button is-black">SUBMIT</button> 
           </div>
         </form>
       </div>
@@ -247,15 +247,20 @@
   
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwq-KRpgyEHltYRUWzSVakOVfvrnbwtyydS8QWsrZ6ciDFbmVzR/exec' 
-      const form = document.forms['submit-to-google-sheet']
-      
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-        .then(response => alert("Form submitted!"))
-        .catch(error => alert("There was an error. Please try again.")) 
-      })
-    </script>
+    const form = document.forms['submit-to-google-sheet']
     
-  </body>
-  </html>
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+    })
+    
+    function reload() {
+      alert("Your form was submitted!"); 
+      window.location.reload();
+    }
+  </script>
+  
+</body>
+</html>
