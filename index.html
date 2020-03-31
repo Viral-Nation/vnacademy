@@ -221,7 +221,7 @@
           <div class="field">
             <label class="label">12) What excites you about being an influencer?</label>
             <div class="control">
-              <input name="What excites you about being an influencer?" class="input" type="text" placeholder="Your answer">
+              <input name="What excites you about being an influencer?" class="input" type="text" placeholder="Your answer"> 
             </div>
           </div>
           <br>
@@ -246,19 +246,14 @@
   <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
   
   <script>
-    function reload() {
-      alert("Your form was submitted!"); 
-      window.location.reload();
-    }
-    
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwq-KRpgyEHltYRUWzSVakOVfvrnbwtyydS8QWsrZ6ciDFbmVzR/exec' 
     const form = document.forms['submit-to-google-sheet']
     
     form.addEventListener('submit', e => {
       e.preventDefault()
       fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => console.log('Success!', response))
-      .catch(error => console.error('Error!', error.message)) 
+      .then(response => alert("Your form was submitted!"))
+      .catch(error => alert("There was an error. Please try again.")) 
     })
   </script>
   
