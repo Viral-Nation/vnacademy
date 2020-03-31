@@ -123,11 +123,11 @@
         <h1>Viral Nation Academy: Questionnaire</h1> 
         <br>
         <br>
-        <form id="form-action"> 
+        <form name="submit-to-google-sheet"> 
           <div class="field">
             <label class="label">Email address <span style="color: red;">*</span></label>
             <div class="control">
-              <input name="Email" class="input" type="email" placeholder="Your email address" required> 
+              <input name="email" class="input" type="email" placeholder="Your email address" required> 
             </div>
           </div> 
           <br>
@@ -198,7 +198,7 @@
           </div>
           <br>
           <div class="field">
-            <label class="label">9) How much would you pay for this course?</label>
+            <label class="label">9) How much would you pay for this course?</label> 
             <div class="control">
               <input class="input" type="text" placeholder="Your answer">
             </div>
@@ -240,26 +240,22 @@
       </div>
     </div>
   </section>
-
+  
+  <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
+  <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+  <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
+  
   <script>
-      var $form = $('form#form-action'), 
-      url = 'https://script.google.com/macros/s/AKfycbwv58evNmgQm6DaOF2OX_LSmJzM55L_QqwvXxWzwleCTR92UUs/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwq-KRpgyEHltYRUWzSVakOVfvrnbwtyydS8QWsrZ6ciDFbmVzR/exec' 
+      const form = document.forms['submit-to-google-sheet']
       
-      $('#submit-form').on('click', function(e) {
-        e.preventDefault();
-        var jqxhr = $.ajax({
-          url: url,
-          method: "GET",
-          dataType: "json",
-          data: $form.serializeObject()
-        }).success(
-        // do something
-        );
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
       })
-    </script> 
-  
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
-  <script src="jquery.serialize-object.min.js"></script> 
-  
-</body>
-</html>
+    </script>
+    
+  </body>
+  </html>
