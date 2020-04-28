@@ -51,6 +51,15 @@
       width: 100%; 
     }
     
+    select {
+      width: 100%; 
+      height: 40px;
+      font-size: 17px;
+      background-color: #fff;
+      border-color: #dbdbdb;
+      color: #363636;
+    }
+    
     .freebirdSolidBackground {
       background-color: none !important; 
     }
@@ -77,10 +86,6 @@
     button {
       width: 250px;
       font-weight: bold;
-      border-radius: 0px !important;
-    }
-    
-    input {
       border-radius: 0px !important;
     }
     
@@ -125,20 +130,20 @@
         <br>
         <form name="submit-to-google-sheet"> 
           <div class="field">
-            <label class="label">Email address <span style="color: red;">*</span></label>
+            <label class="label">1) Email address <span style="color: red;">*</span></label>
             <div class="control">
               <input name="Email" class="input" type="email" placeholder="Your email address" required> 
             </div>
           </div> 
           <br>
           <div class="field">
-            <label class="label">1) Name:</label>
+            <label class="label">2) Name:</label>
             <div class="control">
               <input name="Name" class="input" type="text" placeholder="Your answer"> 
             </div>
           </div>
           <br>
-          <div class="radio-field">
+          <!--<div class="radio-field">
             <div class="control">
               <label class="label">2) Gender:</label> 
               <label class="radio">
@@ -154,82 +159,210 @@
                 Other
               </label>
             </div>
+          </div>-->
+          <div class="form-group radio-field">
+            <label class="label">3) Gender:</label> 
+            <select class="form-control" name="Gender"> 
+              <option></option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
+            </select>
           </div>
           <div class="field">
-            <label class="label">3) Age:</label>
+            <label class="label">4) Age:</label>
             <div class="control">
               <input name="Age" class="input" type="text" placeholder="Your answer">
             </div>
           </div>
           <br>
           <div class="field">
-            <label class="label">4) Location (City, Country):</label>
+            <label class="label">5) Location (City, Country):</label>
             <div class="control">
               <input name="Location" class="input" type="text" placeholder="Your answer">
             </div>
           </div>
           <br>
           <div class="field">
-            <label class="label">5) Niche/Vertical:</label>
+            <label class="label">6) Type of Influencer you are or would like to be ex. Vlogger, Beauty, Foodie, Comedy, Modeling, Fitness etc..</label> 
             <div class="control">
-              <input name="Niche/Vertical" class="input" type="text" placeholder="Your answer">
+              <input name="Type of Influencer you are or would like to be ex. Vlogger, Beauty, Foodie, Comedy, Modeling, Fitness etc.." class="input" type="text" placeholder="Your answer">
             </div>
           </div>
           <br>
           <div class="field">
-            <label class="label">6) Social Media Handles:</label>
+            <label class="label">7) Social Media Handles:</label> 
             <div class="control">
               <input name="Social Media Handles" class="input" type="text" placeholder="Your answer"> 
             </div>
           </div>
           <br>
-          <div class="field">
-            <label class="label">7) Platform of Choice:</label>
-            <div class="control">
-              <input name="Platform of Choice" class="input" type="text" placeholder="Your answer">
-            </div>
+          <div class="form-group radio-field">
+            <label class="label">8) Which social platforms are you most interested in growing?</label> 
+            <select class="form-control" id="exampleFormControlSelect1" name="Which social platforms are you most interested in growing?">
+              <option></option>
+              <option>Instagram</option>
+              <option>YouTube</option>
+              <option>Twitch</option>
+              <option>TikTok</option>
+              <option>Facebook</option>
+              <option>Twitter</option>
+            </select>
           </div>
           <br>
-          <div class="field">
-            <label class="label">8) What is the ideal length of an Influencer Certificate Program?</label>
-            <div class="control">
-              <input name="What is the ideal length of an Influencer Certificate Program?" class="input" type="text" placeholder="Your answer"> 
-            </div>
+          <div class="form-group radio-field">
+            <label class="label">9) Please rate the following: Viral Nation coaches giving daily video tips:</label> 
+            <select class="form-control" name="Please rate the following: Viral Nation coaches giving daily video tips:">
+              <option></option>
+              <option>Not Important</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+              <option>Very Important</option>
+            </select>
           </div>
           <br>
-          <div class="field">
-            <label class="label">9) How much would you pay for this course?</label> 
-            <div class="control">
-              <input name="How much would you pay for this course?" class="input" type="text" placeholder="Your answer">
-            </div>
+          <div class="form-group radio-field">
+            <label class="label">10) Please rate the following: Live lessons from superstar influencers ex. David Dobrik</label> 
+            <select class="form-control" name="Please rate the following: Live lessons from superstar influencers ex. David Dobrik">
+              <option></option>
+              <option>Not Important</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+              <option>Very Important</option> 
+            </select>
           </div>
           <br>
-          <div class="field">
-            <label class="label">10) What are you looking to gain from being a student of the Viral Nation Academy?</label>
-            <div class="control">
-              <input name="What are you looking to gain from being a student of the Viral Nation Academy?" class="input" type="text" placeholder="Your answer">
-            </div>
+          <div class="form-group radio-field">
+            <label class="label">11) Please rate the following: Beginner to Expert curriculum on how to become an influencer:</label> 
+            <select class="form-control" name="Please rate the following: Beginner to Expert curriculum on how to become an influencer:">
+              <option></option>
+              <option>Not Important</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+              <option>Very Important</option> 
+            </select>
           </div>
           <br>
-          <div class="field">
-            <label class="label">11) Please discuss any relevant industry experience.</label> 
-            <div class="control">
-              <input name="Please discuss any relevant industry experience." class="input" type="text" placeholder="Your answer">
-            </div>
+          <div class="form-group radio-field">
+            <label class="label">12) How many hours would you be willing to spend to learn what it takes to become an influencer?</label> 
+            <select class="form-control" name="How many hours would you be willing to spend to learn what it takes to become an influencer?">
+              <option></option>
+              <option>10 hours</option>
+              <option>20 Hours</option> 
+              <option>30+ Hours</option> 
+              <option>Other</option> 
+            </select>
           </div>
           <br>
-          <div class="field">
-            <label class="label">12) What excites you about being an influencer?</label>
-            <div class="control">
-              <input name="What excites you about being an influencer?" class="input" type="text" placeholder="Your answer"> 
-            </div>
+          <div class="form-group radio-field">
+            <label class="label">13) Please rate the following: Analytics to track your progress/growth and tell you what's trending/suggest what to post:</label> 
+            <select class="form-control" name="Please rate the following: Analytics to track your progress/growth and tell you what's trending/suggest what to post:">
+              <option></option>
+              <option>Not Important</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+              <option>Very Important</option> 
+            </select>
           </div>
           <br>
-          <div class="field">
-            <label class="label">13) Tell us a story about yourself.</label> 
-            <div class="control">
-              <input name="Tell us a story about yourself." class="input" type="text" placeholder="Your answer"> 
-            </div>
+          <div class="form-group radio-field">
+            <label class="label">14) Please rate the following: Leaderboard of people in the program to see who is growing the fastest:</label> 
+            <select class="form-control" name="Please rate the following: Leaderboard of people in the program to see who is growing the fastest:">
+              <option></option>
+              <option>Not Important</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+              <option>Very Important</option> 
+            </select>
+          </div>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">15) Please rate the following: Brand Deal Offers:</label> 
+            <select class="form-control" name="Please rate the following: Brand Deal Offers:">
+              <option></option>
+              <option>Not Important</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+              <option>Very Important</option> 
+            </select>
+          </div>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">16) Please rate the following: Discount codes on companies that have products and services you will need as an influencer:</label> 
+            <select class="form-control" name="Please rate the following: Discount codes on companies that have products and services you will need as an influencer:">
+              <option></option>
+              <option>Not Important</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+              <option>Very Important</option> 
+            </select>
+          </div>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">17) How much would you pay monthly to develop or grow as an influencer?</label> 
+            <select class="form-control" name="How much would you pay monthly to develop or grow as an influencer?">
+              <option></option>
+              <option>9.99/Month</option>
+              <option>19.99/month</option>
+              <option>29.99/month</option>
+              <option>Other</option>  
+            </select>
           </div>
           <br>
           <br>
