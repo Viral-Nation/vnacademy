@@ -79,6 +79,13 @@
       text-align: center;
     }
     
+    h2 {
+      font-size: 20px;
+      font-weight: bold;
+      color: black; 
+      
+    }
+    
     #submit-btn {
       margin-bottom: -20px;
     }
@@ -100,11 +107,50 @@
     .radio-field input {
       height: 16px;
     }
+
+    .modal-content {
+      color: black;
+      background: white; 
+      padding: 20px;
+      border-radius: 5px; 
+      text-align: center;
+    }
+
+    .modal-content h1 {
+      font-size: 25px; 
+      font-weight: bold; 
+    }
+
+    .modal-content span {
+      font-size: 15px;
+      font-weight: bold; 
+    }
+
+    .svg-inline--fa.fa-w-16 {
+      width: 3em !important;
+    } 
+
+    .svg-inline--fa {
+      height: 3em !important; 
+    }
     
   </style> 
   
 </head>
 <body>
+  
+  <div id="modal-success" class="modal" >
+    <div class="modal-background"></div>
+    <div class="modal-content">
+        <i class="fas fa-check-circle" style="color: green;"><br>
+        </i><h1>Thank You!<br> 
+        The form has been successfully submitted. <br>
+        <a href="."><span>Close</span></a> 
+      </h1> 
+      <a href="index.html"></a>
+    </div>
+    <button class="modal-close is-large" aria-label="close"></button>
+  </div>
   
   <section class="section text-align" id="header"> 
     <div class="container">
@@ -117,12 +163,12 @@
     <div class="container">
       <div>
         <p>
-          Currently, we are launching Viral Nation Academy. We are seeking feedback to help develop the first premier influencer academy, dedicated to enhancing our future students’ social capital and online presence. If you are interested in learning how to become an influencer or grow your existing audience, please complete the questionnaire below. Your contribution is much appreciated. 
+          Currently, we are launching Viral Nation Academy. We are seeking feedback to help develop the first premier influencer academy, dedicated to enhancing our future students’ social capital and online presence. If you are interested in learning how to become an influencer or grow your existing audience, please complete the questionnaire below. Your contribution is much appreciated. If you complete this form, we will give you your first three months for free. 
         </p> 
       </div>
     </div>
   </section>
-
+  
   <section class="section" id="form"> 
     <div class="container">
       <div class="form-body">
@@ -144,23 +190,6 @@
             </div>
           </div>
           <br>
-          <!--<div class="radio-field">
-            <div class="control">
-              <label class="label">2) Gender:</label> 
-              <label class="radio">
-                <input name="Gender-Male" type="radio" name="answer">
-                Male
-              </label>
-              <label class="radio">
-                <input name="Gender-Female" type="radio" name="answer">
-                Female
-              </label>
-              <label class="radio">
-                <input name="Gender-Other" type="radio" name="answer"> 
-                Other
-              </label>
-            </div>
-          </div>-->
           <div class="form-group radio-field">
             <label class="label">3) Gender:</label> 
             <select class="form-control" name="Gender"> 
@@ -185,9 +214,9 @@
           </div>
           <br>
           <div class="field">
-            <label class="label">6) Type of Influencer you are or would like to be ex. Vlogger, Beauty, Foodie, Comedy, Modeling, Fitness etc..</label> 
+            <label class="label">6) Type of Influencer you are or would like to be ex. Vlogger, Beauty, Foodie, Comedy, Modeling, Fitness etc.</label> 
             <div class="control">
-              <input name="Type of Influencer you are or would like to be ex. Vlogger, Beauty, Foodie, Comedy, Modeling, Fitness etc.." class="input" type="text" placeholder="Your answer">
+              <input name="Type of Influencer you are or would like to be ex. Vlogger, Beauty, Foodie, Comedy, Modeling, Fitness etc." class="input" type="text" placeholder="Your answer">
             </div>
           </div>
           <br>
@@ -198,78 +227,38 @@
             </div>
           </div>
           <br>
-          <div class="form-group radio-field">
-            <label class="label">8) Which social platforms are you most interested in growing?</label> 
-            <select class="form-control" id="exampleFormControlSelect1" name="Which social platforms are you most interested in growing?">
-              <option></option>
-              <option>Instagram</option>
-              <option>YouTube</option>
-              <option>Twitch</option>
-              <option>TikTok</option>
-              <option>Facebook</option>
-              <option>Twitter</option>
-            </select>
+          <div class="radio-field">
+            <div class="control">
+              <label class="label">8) Which social platforms are you most interested in growing?</label> 
+              <label class="radio">
+                <input name="Instagram" type="checkbox" name="answer">
+                Instagram
+              </label>
+              <label class="radio">
+                <input name="YouTube" type="checkbox" name="answer">
+                YouTube
+              </label>
+              <label class="radio">
+                <input name="Twitch" type="checkbox" name="answer"> 
+                Twitch
+              </label>
+              <label class="radio">
+                <input name="TikTok" type="checkbox" name="answer"> 
+                TikTok
+              </label>
+              <label class="radio">
+                <input name="Facebook" type="checkbox" name="answer"> 
+                Facebook
+              </label>
+              <label class="radio">
+                <input name="Twitter" type="checkbox" name="answer"> 
+                Twitter
+              </label>
+            </div>
           </div>
           <br>
           <div class="form-group radio-field">
-            <label class="label">9) Please rate the following: Viral Nation coaches giving daily video tips:</label> 
-            <select class="form-control" name="Please rate the following: Viral Nation coaches giving daily video tips:">
-              <option></option>
-              <option>Not Important</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option> 
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option> 
-              <option>Very Important</option>
-            </select>
-          </div>
-          <br>
-          <div class="form-group radio-field">
-            <label class="label">10) Please rate the following: Live lessons from superstar influencers ex. David Dobrik</label> 
-            <select class="form-control" name="Please rate the following: Live lessons from superstar influencers ex. David Dobrik">
-              <option></option>
-              <option>Not Important</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option> 
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option> 
-              <option>Very Important</option> 
-            </select>
-          </div>
-          <br>
-          <div class="form-group radio-field">
-            <label class="label">11) Please rate the following: Beginner to Expert curriculum on how to become an influencer:</label> 
-            <select class="form-control" name="Please rate the following: Beginner to Expert curriculum on how to become an influencer:">
-              <option></option>
-              <option>Not Important</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option> 
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option> 
-              <option>Very Important</option> 
-            </select>
-          </div>
-          <br>
-          <div class="form-group radio-field">
-            <label class="label">12) How many hours would you be willing to spend to learn what it takes to become an influencer?</label> 
+            <label class="label">9) How many hours would you be willing to spend to learn what it takes to become an influencer?</label> 
             <select class="form-control" name="How many hours would you be willing to spend to learn what it takes to become an influencer?">
               <option></option>
               <option>10 Hours</option>
@@ -280,89 +269,137 @@
           </div>
           <br>
           <div class="form-group radio-field">
-            <label class="label">13) Please rate the following: Analytics to track your progress/growth and tell you what's trending/suggest what to post:</label> 
-            <select class="form-control" name="Please rate the following: Analytics to track your progress/growth and tell you what's trending/suggest what to post:">
-              <option></option>
-              <option>Not Important</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option> 
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option> 
-              <option>Very Important</option> 
-            </select>
-          </div>
-          <br>
-          <div class="form-group radio-field">
-            <label class="label">14) Please rate the following: Leaderboard of people in the program to see who is growing the fastest:</label> 
-            <select class="form-control" name="Please rate the following: Leaderboard of people in the program to see who is growing the fastest:">
-              <option></option>
-              <option>Not Important</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option> 
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option> 
-              <option>Very Important</option> 
-            </select>
-          </div>
-          <br>
-          <div class="form-group radio-field">
-            <label class="label">15) Please rate the following: Brand Deal Offers:</label> 
-            <select class="form-control" name="Please rate the following: Brand Deal Offers:">
-              <option></option>
-              <option>Not Important</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option> 
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option> 
-              <option>Very Important</option> 
-            </select>
-          </div>
-          <br>
-          <div class="form-group radio-field">
-            <label class="label">16) Please rate the following: Discount codes on companies that have products and services you will need as an influencer:</label> 
-            <select class="form-control" name="Please rate the following: Discount codes on companies that have products and services you will need as an influencer:">
-              <option></option>
-              <option>Not Important</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option> 
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option> 
-              <option>Very Important</option> 
-            </select>
-          </div>
-          <br>
-          <div class="form-group radio-field">
-            <label class="label">17) How much would you pay monthly to develop or grow as an influencer?</label> 
+            <label class="label">10) How much would you pay monthly to develop or grow as an influencer?</label> 
             <select class="form-control" name="How much would you pay monthly to develop or grow as an influencer?">
               <option></option>
               <option>9.99/Month</option>
-              <option>19.99/month</option>
-              <option>29.99/month</option>
+              <option>19.99/Month</option>
+              <option>29.99/Month</option>
               <option>Other</option>  
+            </select>
+          </div>
+          <hr>
+          <h2>Based on the level of importance, please rate the following from 1-10.<br>
+            1 being the least important, and 10 being the most important.
+          </h2>
+          <hr>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">11) Please rate the following: Viral Nation coaches giving daily video tips:</label> 
+            <select class="form-control" name="Please rate the following: Viral Nation coaches giving daily video tips:">
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+            </select>
+          </div>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">12) Please rate the following: Live lessons from superstar influencers ex. David Dobrik</label> 
+            <select class="form-control" name="Please rate the following: Live lessons from superstar influencers ex. David Dobrik">
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+            </select>
+          </div>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">13) Please rate the following: Beginner to Expert curriculum on how to become an influencer:</label> 
+            <select class="form-control" name="Please rate the following: Beginner to Expert curriculum on how to become an influencer:">
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+            </select>
+          </div>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">14) Please rate the following: Analytics to track your progress/growth and tell you what's trending/suggest what to post:</label> 
+            <select class="form-control" name="Please rate the following: Analytics to track your progress/growth and tell you what's trending/suggest what to post:">
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+            </select>
+          </div>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">15) Please rate the following: Leaderboard of people in the program to see who is growing the fastest:</label> 
+            <select class="form-control" name="Please rate the following: Leaderboard of people in the program to see who is growing the fastest:">
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+            </select>
+          </div>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">16) Please rate the following: Brand Deal Offers:</label> 
+            <select class="form-control" name="Please rate the following: Brand Deal Offers:">
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>             
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
+            </select>
+          </div>
+          <br>
+          <div class="form-group radio-field">
+            <label class="label">17) Please rate the following: Discount codes on companies that have products and services you will need as an influencer:</label> 
+            <select class="form-control" name="Please rate the following: Discount codes on companies that have products and services you will need as an influencer:">
+              <option></option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option> 
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option> 
             </select>
           </div>
           <br>
@@ -376,17 +413,18 @@
   </section>
   
   <script src="https://wzrd.in/standalone/formdata-polyfill"></script>
-  <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script>
+  <script src="https://wzrd.in/standalone/promise-polyfill@latest"></script> 
   <script src="https://wzrd.in/standalone/whatwg-fetch@latest"></script>
   
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwq-KRpgyEHltYRUWzSVakOVfvrnbwtyydS8QWsrZ6ciDFbmVzR/exec' 
     const form = document.forms['submit-to-google-sheet']
+    var element = document.getElementById("modal-success");
     
     form.addEventListener('submit', e => {
       e.preventDefault()
-      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => alert("Your form was submitted!"))
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)}) 
+      .then(response => element.classList.add("is-active")) 
       .catch(error => alert("There was an error. Please try again.")) 
     })
   </script>
